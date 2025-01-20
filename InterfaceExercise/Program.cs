@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace InterfaceExercise
 {
@@ -6,6 +7,7 @@ namespace InterfaceExercise
     {
         static void Main(string[] args)
         {
+            
             //TODO Be sure to follow BEST PRACTICES when creating classes and interfaces
 
             //Create 2 Interfaces called IVehicle & ICompany
@@ -17,7 +19,21 @@ namespace InterfaceExercise
                 /* Create 4 members that Car, Truck, & SUV all have in common.
                  * Example: public int NumberOfWheels { get; set; }
                  */
+            Car myFirstCar = new Car { Year = "1992", Make = "Toyota", Model = "Corolla", HasTrunk = true};
+            Motorcycle myFirstMotor = new Motorcycle { Year = "5001", Make = "Rampage", Model = "Blowtorch", HasSideCart = false};
             
+            List<IVehicle> vehicles = new List<IVehicle>();
+            
+            vehicles.Add(myFirstCar);
+            vehicles.Add(myFirstMotor);
+
+            foreach (IVehicle vehicle in vehicles)
+            {
+                Console.WriteLine($"Year: {vehicle.Year}, Make: {vehicle.Make}, Model: {vehicle.Model}");
+                Console.WriteLine();
+                vehicle.Drive();
+                Console.WriteLine();
+            }
 
             //In ICompany: 
             
@@ -43,7 +59,7 @@ namespace InterfaceExercise
             //Implement the stubbed out method in the derived classes.
             //In the scope of them method, use string interpolation to display property values.
             //In order to also interpolate values from ICompany, research how to extend interfaces.
-            
+            Console.ReadLine();
         }
     }
 }
