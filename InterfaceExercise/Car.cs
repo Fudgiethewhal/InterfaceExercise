@@ -15,7 +15,7 @@ public class Car : IVehicle, ICompany
     
     public string Logo { get; set; }
     
-    public DateTime Established { get; set; }
+    public DateTime DateEstablished { get; set; }
 
     public void Drive()
     {

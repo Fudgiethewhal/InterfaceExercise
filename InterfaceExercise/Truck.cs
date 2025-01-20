@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace InterfaceExercise;
 
-public class Vehicle : IVehicle
+public class Truck : IVehicle, ICompany
 {
     public string Year { get; set; }
     public string Make { get; set; }
     public string Model { get; set; }
-    public string HasTrunk { get; set; }
-
+    public bool HasTailgate { get; set; }
+    
+    public string Logo { get; set; }
+    
+    public DateTime DateEstablished { get; set; }
+    
     public void Drive()
     {
-        Console.WriteLine($"Driving in my{GetType().Name}"); 
-    } 
+        Console.WriteLine($"Driving in my{GetType().Name}");
+        Console.WriteLine();
+    }
+
 }

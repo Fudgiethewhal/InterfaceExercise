@@ -20,18 +20,21 @@ namespace InterfaceExercise
                  * Example: public int NumberOfWheels { get; set; }
                  */
             Car myFirstCar = new Car { Year = "1992", Make = "Toyota", Model = "Corolla", HasTrunk = true};
-            Motorcycle myFirstMotor = new Motorcycle { Year = "5001", Make = "Rampage", Model = "Blowtorch", HasSideCart = false};
+            Truck myFirstTruck = new Truck { Year = "2001", Make = "Ford", Model = "F-150", HasTailgate = true};
+            SUV myFirstSUV = new SUV { Year = "2002", Make = "Nissan", Model = "Rouge", OpenTrunk = true };
             
             List<IVehicle> vehicles = new List<IVehicle>();
             
             vehicles.Add(myFirstCar);
-            vehicles.Add(myFirstMotor);
+            vehicles.Add(myFirstTruck);
+            vehicles.Add(myFirstSUV);
 
             foreach (IVehicle vehicle in vehicles)
             {
                 Console.WriteLine($"Year: {vehicle.Year}, Make: {vehicle.Make}, Model: {vehicle.Model}");
                 Console.WriteLine();
                 vehicle.Drive();
+                vehicle.DriveDefault();
                 Console.WriteLine();
             }
 

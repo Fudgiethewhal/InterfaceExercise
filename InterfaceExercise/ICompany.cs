@@ -1,7 +1,9 @@
-﻿namespace InterfaceExercise;
+﻿using System;
+
+namespace InterfaceExercise;
 
 public interface ICompany
 {
     string Logo { get; set; }
-    DateTime Established { get; set; }
+    DateTime DateEstablished { get; set; }
 }
